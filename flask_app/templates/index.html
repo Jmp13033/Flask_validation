@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="Form" action="/form" method="post">
+        <ul>
+            Name: <li><input type="text" name="name"></li>
+            <li>
+                
+                <select name="language">
+                    <option value="" selected >choose one</option>
+                    <option value="javascript">javascript</option>
+                    <option value="python3">python3</option>
+                    <option value="Java">Java</option>
+                </select> 
+            
+            </li>
+
+            <li>
+                <select name="location" placeholder="locations">
+                    <option value="Chicago">Chicago</option>
+                    <option value="New-York">New-York</option>
+                </select>
+            </li>
+            
+            <li> Comment: <textarea name="comments" id="" cols="8" rows="8"></textarea> </li>
+            <li> <input type="submit"value="submit"></li>
+        </ul>
+    {% with messages = get_flashed_messages() %}<!-- declare a variable called messages -->
+        {% if messages %}<!-- check if there are any messages -->
+            {% for message in messages %}<!-- loop through the messages flash() -->
+            <p>{{message}}</p><!-- display each message in a paragraph tag -->
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+        
+
+</form>
+
+</body>
+</html>
